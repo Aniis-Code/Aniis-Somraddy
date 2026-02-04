@@ -11,7 +11,14 @@
 
     <!-- NAVBAR -->
     <nav id="navbar">
-        <ul>
+    <div class="nav-container">
+        <div class="logo"></div> <!-- Empty on mobile -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-links">
             <li><a href="#header">Home</a></li>
             <li><a href="#profile">Profile</a></li>
             <li><a href="#education">Education</a></li>
@@ -20,7 +27,9 @@
             <li><a href="#experience">Experience</a></li>
             <li><a href="#languages">Languages</a></li>
         </ul>
-    </nav>
+    </div>
+</nav>
+
 
     <div class="resume-container">
         <!-- HEADER -->
@@ -128,19 +137,25 @@
         window.addEventListener("scroll", () => {
             let current = "";
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 80; // adjust for navbar height
-                if (scrollY >= sectionTop) {
-                    current = section.getAttribute("id");
-                }
+                const sectionTop = section.offsetTop - 80; 
+                if (scrollY >= sectionTop) current = section.getAttribute("id");
             });
 
             navLinks.forEach(link => {
                 link.classList.remove("active");
-                if (link.getAttribute("href") === `#${current}`) {
-                    link.classList.add("active");
-                }
+                if (link.getAttribute("href") === `#${current}`) link.classList.add("active");
             });
         });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById("hamburger");
+const navLinksContainer = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+    navLinksContainer.classList.toggle("show");
+    hamburger.classList.toggle("active"); // toggles X animation
+});
+
     </script>
 </body>
 </html>
