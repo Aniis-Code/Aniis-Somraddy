@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniis Somraddy - Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#languages">Languages</a></li>
+        </ul>
+    </nav>
+
+    <div class="resume-container">
+        <!-- HEADER -->
+        <header id="header">
+            <h1>Aniis Somraddy</h1>
+            <h2>BSc (Hons) Enterprise Software Development, Year 2</h2>
+            <p>University of Mauritius</p>
+            <p>Email: <a href="mailto:somraddy12345@gmail.com">somraddy12345@gmail.com</a> | 
+               <a href="https://www.linkedin.com/in/aniis-somraddy-721934316/" target="_blank">
+                   <i class="fab fa-linkedin"></i> LinkedIn
+               </a>
+            </p>
+        </header>
+
+        <!-- PROFILE -->
+        <section id="profile">
+            <h3>Profile</h3>
+            <p>
+                I am a second-year BSc (Hons) Enterprise Software Development student at the University of Mauritius. 
+                I enjoy applying what I learn to real-world projects and continuously exploring new technologies. 
+                My goal is to grow into a software developer who not only builds high-quality applications but also incorporates AI in ways that enhance, rather than replace, human creativity and problem-solving. 
+                I bring strong skills in problem-solving, debugging, database management, and full-stack web development.
+            </p>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <h3>Education</h3>
+            <p>BSc (Hons) Enterprise Software Development, University of Mauritius, Pailles</p>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <h3>Skills</h3>
+            <div class="skills">
+                <div>
+                    <h4>Technical Skills</h4>
+                    <ul>
+                        <li><strong>Programming Languages:</strong> Python, C#, JavaScript (basic), Java (OOP), HTML, CSS</li>
+                        <li><strong>Frameworks & Tools:</strong> React, Windows Forms, Entity Framework (EF), MSSQL, Raw SQL</li>
+                        <li><strong>Web Development:</strong> Full-stack development (frontend + backend), Three-tier architecture</li>
+                        <li><strong>Software Practices:</strong> Agile methodology, Role-Based Access Control (RBAC)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Soft Skills</h4>
+                    <ul>
+                        <li>Problem-solving</li>
+                        <li>Debugging</li>
+                        <li>Quick learner of new technologies</li>
+                        <li>Independent project management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <h3>Projects</h3>
+            <div class="project">
+                <h4>Employee Management System (EMS)</h4>
+                <p>
+                    Developed a full-featured Windows Forms application with MSSQL backend using Raw SQL. 
+                    Implemented role-based access control (RBAC) with Employee, Manager, and Admin roles.
+                </p>
+            </div>
+            <div class="project">
+                <h4>School Management System (SMS)</h4>
+                <p>
+                    Built a hybrid system: Windows Forms for admin and React frontend for students and teachers. 
+                    Used MSSQL with Raw SQL queries and designed using a three-tier architecture for scalability and maintainability.
+                </p>
+            </div>
+            <div class="project">
+                <h4>Learning Management System (LMS)</h4>
+                <p>
+                    Created using React and C# class libraries with Agile methodology. 
+                    Implemented MSSQL backend using Entity Framework (EF) and RBAC for Admin, Instructor, Learner, and Guest roles. 
+                    All projects completed independently under guidance from a manager.
+                </p>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <h3>Experience</h3>
+            <div class="experience">
+                <h4>Student Intern – Dayforce | Duration: 2.5 months</h4>
+                <p>Gained exposure to the professional work environment and collaborated with experienced team members. Received guidance throughout tasks, enhancing practical knowledge and understanding of software development workflows.</p>
+            </div>
+        </section>
+
+        <!-- LANGUAGES -->
+        <section id="languages">
+            <h3>Languages</h3>
+            <p>English, French (Fluent)</p>
+        </section>
+    </div>
+
+    <script>
+        // Highlight active nav item on scroll
+        const sections = document.querySelectorAll("section, header");
+        const navLinks = document.querySelectorAll("nav ul li a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 80; // adjust for navbar height
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${current}`) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
