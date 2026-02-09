@@ -169,17 +169,56 @@ section h3::after {
     border-radius: 2px;
 }
 
-.skills {
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap; /* responsive for small screens */
+/* ================= TECH STACK GRID ================= */
+
+.tech-grid {
+    display: grid;
+
+    /* Auto responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
+    gap: 22px;
+    margin-top: 20px;
 }
 
-.skills div h4 {
-    font-size: 18px;
-    margin-bottom: 5px;
+/* Individual tech card */
+.tech-item {
+    background: white;
+
+    border-radius: 14px;
+    padding: 18px 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+
+    transition: all 0.25s ease;
+}
+
+/* Logo */
+.tech-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* Tech name */
+.tech-item span {
+    font-size: 14px;
+    font-weight: 500;
     color: #444;
 }
+
+/* Hover Modern Effect */
+.tech-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(10,102,194,0.15);
+}
+
 
 .project, .experience {
     margin-bottom: 15px;
@@ -378,6 +417,13 @@ nav ul li a:hover::after {
     .hero-links {
         justify-content: center;
     }
+}
+@media (max-width: 500px) {
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 /* ================= SLIDE-DOWN ANIMATION ================= */
