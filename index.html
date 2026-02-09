@@ -33,16 +33,49 @@
 
     <div class="resume-container">
         <!-- HEADER -->
-        <header id="header">
+        <!-- ================= HERO COVER HEADER ================= -->
+<header id="header" class="hero">
+
+    <!-- Hero Background Layer -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content Container -->
+    <div class="hero-content">
+
+        <!-- Profile Photo Area -->
+        <div class="hero-photo">
+            <!-- 
+            Replace profile.jpg with your photo later.
+            Keep square image for best results.
+            -->
+            <img src="profile.jpg" alt="Aniis Somraddy Profile Photo">
+        </div>
+
+        <!-- Hero Text Area -->
+        <div class="hero-text">
             <h1>Aniis Somraddy</h1>
-            <h2>BSc (Hons) Enterprise Software Development, Year 2</h2>
-            <p>University of Mauritius</p>
-            <p>Email: <a href="mailto:somraddy12345@gmail.com">somraddy12345@gmail.com</a> | 
-               <a href="https://www.linkedin.com/in/aniis-somraddy-721934316/" target="_blank">
-                   <i class="fab fa-linkedin"></i> LinkedIn
-               </a>
+            <h2>Enterprise Software Developer (In Training)</h2>
+
+            <p class="hero-sub">
+                Building scalable business applications with strong architecture,
+                security, and real-world problem solving.
             </p>
-        </header>
+
+            <!-- Contact Links -->
+            <div class="hero-links">
+                <a href="mailto:somraddy12345@gmail.com">
+                    <i class="fa fa-envelope"></i> Email
+                </a>
+
+                <a href="https://www.linkedin.com/in/aniis-somraddy-721934316/" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+
+        </div>
+    </div>
+</header>
+
 
         <!-- PROFILE -->
         <section id="profile">
@@ -100,7 +133,7 @@
                 <h4>School Management System (SMS)</h4>
                 <p>
                     Built a hybrid system: Windows Forms for admin and React frontend for students and teachers. 
-                    Used MSSQL with Raw SQL queries and designed using a three-tier architecture for scalability and maintainability.
+                    <!-- Used MSSQL with Raw SQL queries and designed using a three-tier architecture for scalability and maintainability. -->
                 </p>
             </div>
             <div class="project">
@@ -155,6 +188,38 @@ hamburger.addEventListener("click", () => {
     navLinksContainer.classList.toggle("show");
     hamburger.classList.toggle("active"); // toggles X animation
 });
+
+/* ================= AUTO CLOSE MOBILE NAV ================= */
+
+/*
+Select all nav links inside the mobile menu.
+We attach a click listener to each one.
+*/
+const navItems = document.querySelectorAll("#nav-links a");
+
+/*
+Loop through each link and add click behavior.
+*/
+navItems.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        /*
+        Remove "show" class from menu.
+        This closes the dropdown.
+        */
+        navLinksContainer.classList.remove("show");
+
+        /*
+        Remove hamburger active animation.
+        This turns the X back into hamburger.
+        */
+        hamburger.classList.remove("active");
+
+    });
+
+});
+
 
     </script>
 </body>
